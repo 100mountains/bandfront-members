@@ -24,7 +24,6 @@ Bandfront Members extends the Bandfront ecosystem by providing comprehensive mem
 - Seamless integration with Bandfront Player plugin
 - Compatible with Bandfront child theme
 - WooCommerce integration for e-commerce functionality
-- WordPress multisite support
 
 ## Requirements
 
