@@ -95,3 +95,34 @@ If you later want recurring billing, the official WooCommerce Subscriptions exte
 
 ### 3. Likes and chat on the same page
 Turn on WordPress comments for your backstage posts and enqueue a 50-line JS file that replaces the standard "Reply" link with an inline 👍 button. AJAX it to a custom REST route (/bf/v1/like/{post}) that stores a simple integer in post-meta, and print the running total next to the button. Only visitors who pass the same access_backstage capability check can hit the endpoint, so bots and lurkers stay out.
+
+## Configuration
+
+### Backstage Page Setting
+The plugin needs to know what page you're using for the backstage/members area. By default, it uses 'backstage' but you can customize this to match your site's needs (e.g., 'members', 'vip', 'supporters', etc.).
+
+```php
+// Add this to your plugin settings or use a simple option
+function bf_get_backstage_page() {
+    return get_option( 'bf_backstage_page', 'backstage' ); // default: 'backstage'
+}
+
+// Use in your content gate function
+function bf_backstage_gate( $content ) {
+    if ( get_post_meta( get_the_ID(), '_bf_backstage', true ) ) {
+        if ( current_user_can( 'access_backstage' ) ) {
+            return $content;
+        }
+        $backstage_page = bf_get_backstage_page();
+        return '<p>This content is for backers only. 
+                <a href="' . esc_url( home_url( '/' . $backstage_page . '/' ) ) . '">Access ' . ucfirst($backstage_page) . '</a></p>';
+    }
+    return $content;
+}
+```
+
+**Examples:**
+- Default: `/backstage/` 
+- Custom: `/members/`, `/vip/`, `/supporters/`, `/fans/`
+
+You can set this via WordPress admin options or directly in the plugin settings.
