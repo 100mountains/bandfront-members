@@ -1,5 +1,17 @@
 # Bandfront Members
 
+bandfront/
+├── bandfront-members/
+│   ├── bandfront-members.php
+│   └── includes/
+├── bandfront-analytics/
+│   ├── bandfront-analytics.php
+│   └── includes/
+└── bandfront-core/
+    ├── bandfront-core.php
+    └── shared/
+
+
 A WordPress membership and subscription plugin designed for the Bandfront music platform.
 
 ## Overview
