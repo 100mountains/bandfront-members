@@ -1,5 +1,7 @@
 #!/bin/bash
 
+exit 0
+
 # Script to update WaveSurfer.js to the latest pre-built version
 # Now located in build/ directory
 
