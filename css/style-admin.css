@@ -1,0 +1,454 @@
+
+/* mini STYLES */
+
+.bfp-file-name,
+.bfp-file-url {
+    width: 100%;
+}
+
+#bfp_woocommerce_metabox .widefat {
+    border: 0;
+}
+
+.bfp-tooltip {
+    position: relative;
+    display: inline-block;
+}
+
+.bfp-tooltip .bfp-tooltiptext {
+    visibility: hidden;
+    width: 240px;
+    background-color: #555;
+    color: #fff;
+    text-align: center;
+    padding: 5px;
+    border-radius: 6px;
+    position: absolute;
+    z-index: 9999;
+    bottom: 125%;
+    left: 50%;
+    margin-left: -120px;
+    opacity: 0;
+    transition: opacity 1s;
+}
+
+.bfp-tooltip .bfp-tooltiptext::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -10px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #555 transparent transparent transparent;
+}
+
+.bfp-tooltip:hover .bfp-tooltiptext {
+    visibility: visible;
+    opacity: 1;
+}
+
+.bfp-highlight-box {
+    border: 1px solid #E6DB55;
+    margin-bottom: 10px;
+    padding: 5px;
+    background-color: #FFFFE0;
+}
+
+#bfp_tips_body,
+.bfp-tip-text {
+    display: none;
+}
+
+.cp-blink-me {
+    animation: cp_blinker 2s linear infinite;
+    text-transform: uppercase;
+}
+
+@keyframes cp_blinker {
+    50% {
+        opacity: 0;
+    }
+}
+
+/* GLOBAL OPTIONS STYLES */
+
+/* Header and Title Styles */
+.bfp-tagline {
+    font-style: italic;
+    font-size: 12px;
+    color: #666;
+    margin-top: -10px;
+}
+
+/* Tips Section */
+.bfp-tips-container {
+    padding: 20px;
+    background: #f8f9fa;
+    border: 1px solid #e1e1e1;
+    margin-bottom: 25px;
+    border-radius: 4px;
+}
+
+.bfp-tips-header h2 {
+    margin-top: 0;
+    margin-bottom: 15px;
+    cursor: pointer;
+    color: #23282d;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.bfp-tips-header h2:hover {
+    color: #0073aa;
+}
+
+.bfp-tips-body {
+    display: none;
+}
+
+.bfp-tips-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.bfp-tips-card {
+    padding: 15px;
+    background: #fff;
+    border: 1px solid #e1e1e1;
+    border-radius: 4px;
+}
+
+.bfp-tips-card h3 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    color: #23282d;
+    font-size: 16px;
+}
+
+.bfp-tips-card p {
+    margin-bottom: 10px;
+    color: #555;
+    line-height: 1.5;
+}
+
+.bfp-tips-link {
+    display: inline-block;
+    padding: 8px 16px;
+    color: #0073aa;
+    text-decoration: none;
+    font-weight: 500;
+    border: 1px solid #0073aa;
+    border-radius: 3px;
+    transition: all 0.2s ease;
+}
+
+.bfp-tips-link:hover {
+    background: #0073aa;
+    color: #fff;
+}
+
+.bfp-tips-protip {
+    margin-top: 20px;
+    padding: 15px;
+    background: #e7f5ff;
+    border-left: 4px solid #0073aa;
+    border-radius: 0 3px 3px 0;
+}
+
+.bfp-tips-protip p {
+    margin: 0;
+    color: #23282d;
+    font-weight: 500;
+}
+
+/* Main Form Tables */
+.bfp-main-table {
+    border-left: 0;
+    border-right: 0;
+    border-bottom: 0;
+    padding-bottom: 0;
+}
+
+.bfp-settings-table {
+    border: 1px solid #e1e1e1;
+    margin-bottom: 20px;
+    background: #fff;
+}
+
+/* Section Headers */
+.bfp-section-header {
+    position: relative;
+    padding: 15px;
+    background: #f8f9fa;
+    border-bottom: 1px solid #e1e1e1;
+    cursor: pointer;
+}
+
+.bfp-section-header h2 {
+    margin: 0;
+    color: #23282d;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.bfp-section-header:hover {
+    background: #f1f1f1;
+}
+
+/* Section Arrows */
+.bfp-section-arrow {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: transform 0.3s ease;
+    font-size: 14px;
+    color: #666;
+}
+
+.bfp-section-arrow-open {
+    transform: translateY(-50%) rotate(90deg);
+}
+
+/* Form Elements */
+.bfp-settings-table td {
+    padding: 12px 15px;
+    vertical-align: top;
+}
+
+.bfp-settings-table label {
+    color: #23282d;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.bfp-em-text {
+    color: #666;
+    font-size: 13px;
+    font-style: italic;
+}
+
+/* Input Styles */
+.bfp-settings-table input[type="text"],
+.bfp-settings-table input[type="number"],
+.bfp-settings-table textarea,
+.bfp-settings-table select {
+    border: 1px solid #ddd;
+    padding: 4px 8px;
+    border-radius: 3px;
+    background: #fff;
+}
+
+.bfp-settings-table input[type="text"]:focus,
+.bfp-settings-table input[type="number"]:focus,
+.bfp-settings-table textarea:focus,
+.bfp-settings-table select:focus {
+    border-color: #0073aa;
+    box-shadow: 0 0 0 1px #0073aa;
+    outline: none;
+}
+
+/* Placeholder Content */
+.bfp-placeholder-text {
+    color: #666;
+    font-style: italic;
+    margin: 15px 0;
+}
+
+.bfp-cloud-features {
+    margin-top: 15px;
+}
+
+.bfp-cloud-features h4 {
+    color: #23282d;
+    margin-bottom: 10px;
+    font-size: 14px;
+}
+
+.bfp-cloud-features ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.bfp-cloud-features li {
+    padding: 5px 0;
+    color: #555;
+}
+
+/* Cloud Storage Tabs */
+.bfp-cloud-tabs {
+    margin-top: 15px;
+}
+
+.bfp-cloud-tab-buttons {
+    display: flex;
+    border-bottom: 2px solid #e1e1e1;
+    margin-bottom: 20px;
+}
+
+.bfp-cloud-tab-btn {
+    background: #f8f9fa;
+    border: 1px solid #e1e1e1;
+    border-bottom: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+    margin-right: -1px;
+    transition: all 0.2s ease;
+    color: #23282d;
+}
+
+.bfp-cloud-tab-btn:hover {
+    background-color: #f1f1f1;
+}
+
+.bfp-cloud-tab-active {
+    background: #fff !important;
+    color: #0073aa !important;
+    border-top: 2px solid #0073aa;
+    padding-top: 8px;
+    font-weight: 600;
+}
+
+.bfp-cloud-tab-content {
+    min-height: 200px;
+}
+
+.bfp-cloud-tab-panel {
+    display: none;
+}
+
+.bfp-cloud-tab-panel-active {
+    display: block;
+}
+
+.bfp-cloud-placeholder {
+    padding: 20px;
+    background: #f8f9fa;
+    border: 1px solid #e1e1e1;
+    border-radius: 3px;
+}
+
+.bfp-cloud-placeholder h3 {
+    margin-top: 0;
+    color: #23282d;
+    font-size: 16px;
+}
+
+.bfp-cloud-placeholder p {
+    color: #555;
+    line-height: 1.6;
+}
+
+/* Troubleshooting Section */
+.bfp-troubleshoot-item {
+    padding: 15px;
+    margin-bottom: 15px;
+    background: #f8f9fa;
+    border: 1px solid #e1e1e1;
+    border-radius: 3px;
+}
+
+.bfp-troubleshoot-item p {
+    font-weight: 600;
+    color: #23282d;
+    margin-bottom: 10px;
+}
+
+.bfp-troubleshoot-item label {
+    font-weight: normal;
+}
+
+.bfp-troubleshoot-protip {
+    border: 1px solid #46b450;
+    margin-bottom: 10px;
+    padding: 10px;
+    background: #ecf7ed;
+    border-radius: 3px;
+}
+
+.bfp-troubleshoot-protip p {
+    margin: 0;
+    color: #2e7d32;
+}
+
+/* Submit Button */
+.bfp-submit-wrapper {
+    margin-top: 20px;
+    padding: 20px 0;
+}
+
+.bfp-submit-wrapper .button-primary {
+    font-size: 14px;
+    padding: 4px 12px;
+    height: auto;
+}
+
+/* Utility Classes */
+.bfp-column-30 {
+    width: 30%;
+}
+
+.bfp-input-full {
+    width: 100% !important;
+}
+
+.bfp-table-noborder {
+    border: 0;
+}
+
+/* Section-specific colors (subtle) */
+.bfp-membership-settings-section .bfp-section-header {
+    border-left: 4px solid #0073aa;
+}
+
+.bfp-content-settings-section .bfp-section-header {
+    border-left: 4px solid #00a0d2;
+}
+
+.bfp-payment-settings-section .bfp-section-header {
+    border-left: 4px solid #46b450;
+}
+
+.bfp-notifications-section .bfp-section-header {
+    border-left: 4px solid #ff9800;
+}
+
+.bfp-analytics-section .bfp-section-header {
+    border-left: 4px solid #9c27b0;
+}
+
+.bfp-troubleshoot-section .bfp-section-header {
+    border-left: 4px solid #dc3232;
+}
+
+/* Ensure content visibility */
+.bfp-section-content {
+    background: #fff;
+}
+
+.bfp-section-content td {
+    background: #fff;
+}
+
+/* Remove any color inheritance issues */
+.bfp-settings-table,
+.bfp-settings-table * {
+    color: inherit;
+}
+
+/* Checkbox styling */
+.bfp-settings-table input[type="checkbox"] {
+    margin-right: 8px;
+}
+
+/* Cloud info styling */
+.bfp-cloud-info {
+    color: #666;
+    margin-bottom: 15px;
+    font-style: italic;
+}

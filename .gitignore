@@ -1,0 +1,12 @@
+# Backup files and directories
+backup/
+backups/
+*.backup
+*.bak
+*~
+
+# Common backup patterns
+*.orig
+*.tmp
+*.swp
+*.swo
