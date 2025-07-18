@@ -16,7 +16,10 @@ class Plugin {
         $this->config = new Config();
         $this->roles = new Roles($this->config);
         $this->vault = new Vault($this->config, $this->roles);
-        $this->admin = new Admin($this->config);
+        $this->admin = new Admin($this);  // Pass $this instead of $this->config
+        
+        // Store in global for theme access
+        $GLOBALS['BandfrontMembers'] = $this;
         
         $this->init();
     }

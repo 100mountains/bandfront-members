@@ -27,7 +27,7 @@ class Config {
         $this->defaults = [
             // Core Membership Settings
             'membership_enabled' => true,
-            'backer_role' => 'subscriber',
+            'backer_role' => 'bandfront_backers',  // Changed from 'subscriber' to match the role being created
             'posts_page' => '',
             'join_page' => '',  // New setting for join/signup page
             'default_membership_tier' => 'basic',

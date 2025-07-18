@@ -14,10 +14,16 @@ class Admin {
     
     public function __construct(Plugin $mainPlugin) {
         $this->mainPlugin = $mainPlugin;
-        $this->initHooks();
         
         // Load view templates
         $this->loadViewTemplates();
+    }
+    
+    /**
+     * Initialize admin hooks
+     */
+    public function init(): void {
+        $this->initHooks();
     }
     
     /**

@@ -44,18 +44,10 @@ class Roles {
     
     public function restrictBackstageAccess(): void {
         $posts_page = $this->config->get('posts_page', '');
-        $backer_role = $this->config->get('backer_role', 'bandfront_backers');
         
         // Check if we're on the restricted page
         if ($posts_page && is_page($posts_page)) {
-            if (!is_user_logged_in()) {
-                // Redirect to login with return URL
-                $redirect_url = add_query_arg('redirect_to', urlencode(get_permalink()), wp_login_url());
-                wp_redirect($redirect_url);
-                exit;
-            }
-            
-            // Check if user has the required role
+            // Check if user has the required role (including non-logged-in users)
             if (!$this->userHasBackstageAccess()) {
                 // Show a custom template or redirect
                 $this->showAccessDeniedMessage();
@@ -75,6 +67,10 @@ class Roles {
         
         $backer_role = $this->config->get('backer_role', 'bandfront_backers');
         $user = new \WP_User($user_id);
+        
+        // Debug: Let's make sure we're checking the right role
+        error_log('Checking backstage access for user ' . $user_id . ' with role requirement: ' . $backer_role);
+        error_log('User roles: ' . print_r($user->roles, true));
         
         // Check if user has the specified role or admin capabilities
         return $user->has_role($backer_role) || $user->has_cap('manage_options');
