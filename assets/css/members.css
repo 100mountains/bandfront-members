@@ -1,0 +1,112 @@
+/* Backstage Access Styles */
+.backstage-access-denied {
+    min-height: 60vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 40px 20px;
+}
+
+.backstage-access-denied .container {
+    max-width: 600px;
+}
+
+.backstage-actions {
+    margin-top: 30px;
+}
+
+.backstage-actions .button {
+    display: inline-block;
+    padding: 12px 30px;
+    margin: 0 10px;
+    background: #FD8F35;
+    color: #000;
+    text-decoration: none;
+    font-family: 'Alacti', sans-serif;
+    transition: all 0.3s ease;
+}
+
+.backstage-actions .button:hover {
+    background: #ff6b35;
+}
+
+.backstage-actions .button.secondary {
+    background: transparent;
+    border: 2px solid #FD8F35;
+    color: #FD8F35;
+}
+
+.backstage-actions .button.secondary:hover {
+    background: #FD8F35;
+    color: #000;
+}
+
+/* Backstage content protection */
+.backstage-login-required,
+.backstage-membership-required {
+    background: rgba(253, 143, 53, 0.1);
+    border-left: 4px solid #FD8F35;
+    padding: 20px;
+    margin: 20px 0;
+}
+
+.backstage-login-required a,
+.backstage-membership-required a {
+    color: #FD8F35;
+    text-decoration: underline;
+}
+
+.backstage-login-required a:hover,
+.backstage-membership-required a:hover {
+    color: #ff6b35;
+}
+
+/* Vault Styles */
+.vault-content {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.album-section {
+    background: linear-gradient(135deg, #4a5568 0%, #553c9a 100%);
+    border-radius: 15px;
+    padding: 20px;
+    margin: 20px 0;
+    color: white;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+.codes-grid {
+    background: rgba(255,255,255,0.1);
+    border-radius: 10px;
+    padding: 15px;
+    margin-top: 15px;
+    font-family: monospace;
+    line-height: 1.8;
+}
+
+.codes-grid code {
+    background: rgba(255,255,255,0.2);
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-weight: bold;
+}
+
+.album-section h3 {
+    margin-top: 0;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+.album-section a {
+    color: #ffeb3b;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.album-section a:hover {
+    text-decoration: underline;
+}

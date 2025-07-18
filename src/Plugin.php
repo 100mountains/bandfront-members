@@ -5,35 +5,46 @@ if (!defined('ABSPATH')) {
     exit;
 }
 
-/**
- * Main Plugin Class - Simplified for admin page only
- */
 class Plugin {
     
-    private ?Config $config = null;
-    private ?Admin $admin = null;
+    private Config $config;
+    private Roles $roles;
+    private Vault $vault;
+    private Admin $admin;
     
     public function __construct() {
-        // Initialize config
         $this->config = new Config();
+        $this->roles = new Roles($this->config);
+        $this->vault = new Vault($this->config, $this->roles);
+        $this->admin = new Admin($this->config);
         
-        // Only initialize admin in admin area
-        if (is_admin()) {
-            $this->admin = new Admin($this);
-        }
+        $this->init();
     }
     
-    /**
-     * Get config instance
-     */
+    private function init(): void {
+        // Initialize components
+        $this->roles->init();
+        $this->vault->init();
+        $this->admin->init();
+        
+        // Add styles
+        add_action('wp_enqueue_scripts', [$this, 'enqueueStyles']);
+    }
+    
+    public function enqueueStyles(): void {
+        wp_enqueue_style(
+            'bandfront-members',
+            BFM_PLUGIN_URL . 'assets/css/members.css',
+            [],
+            BFM_VERSION
+        );
+    }
+    
     public function getConfig(): Config {
         return $this->config;
     }
     
-    /**
-     * Legacy method for compatibility
-     */
-    public function get_config(): Config {
-        return $this->config;
+    public function getRoles(): Roles {
+        return $this->roles;
     }
 }
